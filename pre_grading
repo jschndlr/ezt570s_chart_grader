@@ -1,6 +1,6 @@
 #TODO: Pre-grade data to define which events are on and off and what state the controller is in RAMPING, SOAKING, LINEAR RAMPING, ETC
 
-from csv import DictReader, DictWriter
+from csv import DictReader, writer
 import datetime as dt
 from statistics import pstdev
 
@@ -13,7 +13,7 @@ fieldnames = ['Type', 'From', 'Target', 'ElapsedTime', 'ControlLow', 'ControlHig
 workingfile = open(fileundertest)
 recordfile = open(outputfile, 'a', newline='')
 reader = DictReader(workingfile)
-writer = DictWriter(recordfile, fieldnames=fieldnames)
+writer = writer(recordfile)
 isFirstRun = True
 isCooling = False
 isHeating = False
